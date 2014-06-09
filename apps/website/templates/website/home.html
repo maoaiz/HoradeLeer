@@ -1,0 +1,13 @@
+{% extends "website/base.html" %}
+{% load i18n %}
+{% block content %}
+      <div class="page-header">
+        <h1>{% trans 'Hora de leer' %}</h1>
+      </div>
+      <p class="lead">{% trans 'Bienvenido a la plataforma que te ayudará a no perder el hilo de tus lecturas' %}</p>
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}">{% trans 'Cerrar sesión' %}</a>
+      {% else %}
+      <a href="{% url 'login' %}">{% trans 'Iniciar sesión' %}</a>
+      {% endif %}
+{% endblock %}
